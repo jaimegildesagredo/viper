@@ -24,7 +24,7 @@ def application(**settings):
 
     return web.Application(
         [
-            (r'/', handlers.MainHandler),
+            web.url(r'/', handlers.MainHandler, name='index'),
             web.url(r'/distutils/',
                 handlers.DistutilsDownloadHandler, dict(packages=packages, cache=cache)
             ),
